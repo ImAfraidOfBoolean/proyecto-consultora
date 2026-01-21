@@ -67,7 +67,7 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 1;
     background-color: var(--bg-header);
 }
 
@@ -84,6 +84,7 @@ nav li {
 
 nav a {
     padding: 0.5rem;
+    transition-duration: 300ms;
 }
 
 nav a:hover {
@@ -98,6 +99,7 @@ nav .btn-cta-highlight {
     border-radius: 10px;
     background-color: var(--color-primary);
     color: var(--text2);
+    transition-duration: 300ms;
 }
 
 nav .btn-cta-highlight:hover {
@@ -108,14 +110,14 @@ nav .btn-cta-highlight:hover {
 
 #hero-index {
     display: flex;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-highlight);
     background-image: url("/img/hero.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     padding: 5rem;
-    font-size: clamp(0.7rem, 2vw, 5.5rem);
+    font-size: clamp(0.7rem, 1.5vw, 5rem);
     height: 80vh;
 }
 
@@ -140,9 +142,12 @@ nav .btn-cta-highlight:hover {
     border-radius: 10px;
     padding: 1rem;
     margin: 2rem;
+    transition-duration: 300ms;
 }
 
+
 .btn-cta-highlight:hover {
+    transform: scale(1.1);
     transition-duration: 300ms;
     background-color: var(--bg-btc-2);
 }
@@ -152,8 +157,7 @@ nav .btn-cta-highlight:hover {
     grid-column-end: 3;
     place-items: center;
     display: grid;
-    font-size: clamp(2rem, 7vw + 2rem, 5rem);
-
+    font-size: clamp(2rem, 7vw + 5rem, 3.5rem);
 }
 
 
@@ -274,7 +278,6 @@ footer {
     background-color: var(--color-dark);
     margin-top: auto;
     padding: 2rem;
-
 }
 
 @media (max-width: 800px) {
