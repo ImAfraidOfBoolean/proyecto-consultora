@@ -17,6 +17,7 @@
     /* Text */
     --text: hsl(0, 0%, 0%);
     --text2: hsl(300, 65%, 25%);
+    --text3: hsl(0, 0%, 40%);
 
     /* Borders & dividers */
     --border-soft: hsl(220, 14%, 82%);
@@ -25,6 +26,14 @@
     /* Shadows*/
     --shadow: hsl(300, 15%, 75%);
     --shadow-medium: hsla(0, 0%, 0%, 0.15);
+
+    /* Status Colors */
+    --status-completed-bg: hsl(120, 65%, 85%);
+    --status-completed-text: hsl(120, 65%, 25%);
+    --status-progress-bg: hsl(210, 65%, 85%);
+    --status-progress-text: hsl(210, 65%, 25%);
+    --status-pending-bg: hsl(0, 0%, 85%);
+    --status-pending-text: hsl(0, 0%, 25%);
 }
 
 /* reset css */
@@ -89,6 +98,7 @@ nav li {
 nav a {
     padding: 0.5rem;
     transition-duration: 300ms;
+    text-transform: capitalize;
 }
 
 nav a:hover {
@@ -270,20 +280,14 @@ button {
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
-    transition: background-color 0.3s;
+    transition-duration: 300ms;
+
 }
 
 button:hover {
     background-color: var(--color-secondary);
 }
 
-footer {
-    text-align: center;
-    color: white;
-    background-color: var(--color-dark);
-    margin-top: auto;
-    padding: 2rem;
-}
 
 .main-sgr {
     display: flex;
@@ -311,7 +315,7 @@ footer {
     display: flex;
     gap: 2rem;
     margin: 2rem;
-    font-size: clamp(0.5rem, 1vw + 1rem, 2rem);
+    font-size: clamp(0.5rem, 1vw + 0.5rem, 1rem);
 }
 
 .left {
@@ -328,12 +332,22 @@ aside {
     gap: 2rem;
 }
 
+aside>section {
+    flex: 1;
+}
+
+aside>section>* {
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+}
+
 .container section {
     padding: 2rem;
     background-color: var(--bg-highlight);
     border-radius: 15px;
     box-shadow: 0 4px 15px var(--shadow-medium);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition-duration: 300ms;
     border: 1px solid var(--border-soft);
 }
 
@@ -364,47 +378,251 @@ aside section h3 {
 
 .precio {
     display: grid;
-    justify-content: center;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
 }
 
 .precio>h2 {
-    display: grid;
-    justify-content: center;
-    margin: 2rem;
-    padding: 1rem;
-    grid-column: 2/3;
-    grid-row: 1/1;
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text2);
 }
 
-.precio>p {
-    display: grid;
-    justify-content: center;
-    margin: 2rem;
-    padding: 1rem;
+.card {
+    background: white;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    transition-duration: 300ms;
 }
 
-.precio>.basic {
-    grid-column: 1/2;
-    grid-row: 2/2;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-medium);
+    border-color: var(--color-primary);
 }
 
-.precio>.pro {
-    grid-column: 2/3;
-    grid-row: 2/2;
+.card h3 {
+    font-size: 1.5rem;
+    color: var(--text2);
 }
 
-.precio>.premium {
-    grid-column: 3/4;
-    grid-row: 2/2;
+.card .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-dark);
 }
 
+.card ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card li {
+    color: #666;
+}
+
+.btn-card {
+    margin-top: auto;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    color: var(--text2);
+    font-weight: bold;
+    transition-duration: 300ms;
+}
+
+.btn-card:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.plan-card.pro {
+    border-color: var(--color-primary);
+    background-color: var(--bg-highlight);
+}
 
 .cta-proyecto {
     align-self: center;
     margin: 2rem 4rem;
+}
+
+.cronologia {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.cronologia h1 {
+    text-align: center;
+    color: var(--text2);
+    font-size: 2.5rem;
+}
+
+.cronologia p {
+    text-align: center;
+    color: var(--gray-text);
+    margin-bottom: 3rem;
+}
+
+tr:nth-child(even) {
+    background-color: var(--bg-highlight);
+}
+
+.table-container {
+    overflow-x: auto;
+    box-shadow: 0 4px 15px var(--shadow-medium);
+    border-radius: 12px;
+    background: white;
+}
+
+.cronologia-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    /* Ensure content is readable on small screens */
+}
+
+.cronologia-table th,
+.cronologia-table td {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.cronologia-table th {
+    background-color: var(--color-primary);
+    color: var(--text2);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.cronologia-table tbody tr:hover {
+    background-color: var(--bg-highlight);
+}
+
+.cronologia-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.cronologia-table tfoot td {
+    background-color: var(--bg-secondary);
+    font-weight: bold;
+    text-align: right;
+    color: var(--text2);
+    padding: 1.5rem;
+}
+
+/* Status Badges */
+span {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.completed {
+    background-color: var(--status-completed-bg);
+    color: var(--status-completed-text);
+}
+
+.in-progress {
+    background-color: var(--status-progress-bg);
+    color: var(--status-progress-text);
+}
+
+.pending {
+    background-color: var(--status-pending-bg);
+    color: var(--status-pending-text);
+}
+
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-soft);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 3rem 1rem;
+    margin-top: auto;
+    font-size: 0.95rem;
+}
+
+footer>div {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.social-links a {
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-soft);
+    border-radius: 50px;
+    transition-duration: 300ms;
+
+}
+
+.social-links a:hover {
+    background-color: white;
+    color: var(--color-dark);
+    transform: translateY(-2px);
+}
+
+.legal-link {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--border-soft);
+    transition-duration: 300ms;
+
+}
+
+.legal-link:hover {
+    color: white;
+    border-bottom-style: solid;
+}
+
+@media (min-width: 800px) {
+    footer>div {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 @media (max-width: 800px) {
@@ -509,5 +727,9 @@ aside section h3 {
     .left,
     aside {
         width: 100%;
+    }
+
+    .precio {
+        grid-template-columns: 1fr;
     }
 }
