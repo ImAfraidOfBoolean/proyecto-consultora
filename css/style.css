@@ -52,6 +52,10 @@ button {
     box-sizing: border-box;
 }
 
+textarea {
+    resize: none;
+}
+
 /* quita la linea de los hipervinculos y ajusta el color al negro como predeterminado */
 a {
     text-decoration: none;
@@ -181,12 +185,13 @@ nav .btn-cta-highlight:hover {
     background-color: var(--bg-highlight);
     padding-block: 1rem;
     padding-inline: 5rem;
-    font-size: 1.5rem;
+    font-size: clamp(0.7rem, 1.2vw, 2.5rem);
+    /* font-size: 1.5rem; */
 
 }
 
 .service-content .ico {
-    font-size: 3rem;
+    font-size: clamp(1rem, 2vw, 4rem);
     padding-block: 2rem;
 }
 
@@ -280,6 +285,41 @@ footer {
     padding: 2rem;
 }
 
+.main-sgr {
+    display: flex;
+    flex-direction: column;
+}
+
+.sgr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--bg-highlight);
+    font-size: clamp(1rem, 2vw + 2rem, 2rem);
+}
+
+.sgr>h1 {
+    margin: 2rem;
+}
+
+.sgr>p {
+    margin: 2rem;
+}
+
+main>section.sgr~section {
+    display: flex;
+    margin: 2rem;
+    padding: 2rem;
+    background-color: var(--bg-highlight);
+}
+
+main>section.sgr~section li {
+    list-style: none;
+}
+
+
+
 @media (max-width: 800px) {
 
     body {
@@ -305,14 +345,14 @@ footer {
     }
 
     nav li {
-        width: 100%;
+        /* width: 100%; */
         text-align: center;
         padding: 0;
     }
 
     nav a {
         display: block;
-        width: 100%;
+        /* width: 100%; */
         box-sizing: border-box;
     }
 
@@ -356,6 +396,9 @@ footer {
         grid-row: auto;
     }
 
+    .btn-cta-highlight:hover {
+        transform: scale(1);
+    }
 
     footer {
         height: auto;
