@@ -7,6 +7,12 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Cronologia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Galdeano:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -31,7 +37,7 @@
         <p>Detalle de las fases de desarrollo e implementación del sistema.</p>
 
         <div class="table-container">
-          <table class="cronologia-table">
+          <table>
             <thead>
               <tr>
                 <th>Fase</th>
@@ -43,50 +49,70 @@
             </thead>
             <tbody>
               <tr>
-                <td>1. Análisis</td>
-                <td>
+                <td data-label="Fase">1. Análisis</td>
+                <td data-label="Descripción">
                   Reunión inicial y levantamiento de requisitos con el cliente.
                 </td>
-                <td>01/02/2026</td>
-                <td>03/02/2026</td>
-                <td><span class="completed">Completado</span></td>
+                <td data-label="Fecha de Inicio">01/02/2026</td>
+                <td data-label="Fecha Fin">03/02/2026</td>
+                <td data-label="Estado">
+                  <span class="completed">Completado</span>
+                </td>
               </tr>
               <tr>
-                <td>2. Diseño</td>
-                <td>Creación de wireframes, prototipos y diseño UI/UX.</td>
-                <td>04/02/2026</td>
-                <td>10/02/2026</td>
-                <td><span class="in-progress">En Progreso</span></td>
+                <td data-label="Fase">2. Diseño</td>
+                <td data-label="Descripción">
+                  Creación de wireframes, prototipos y diseño UI/UX.
+                </td>
+                <td data-label="Fecha de Inicio">04/02/2026</td>
+                <td data-label="Fecha Fin">10/02/2026</td>
+                <td data-label="Estado">
+                  <span class="in-progress">En Progreso</span>
+                </td>
               </tr>
               <tr>
-                <td>3. Desarrollo Frontend</td>
-                <td>Maquetación HTML/CSS y lógica cliente.</td>
-                <td>11/02/2026</td>
-                <td>25/02/2026</td>
-                <td><span class="pending">Pendiente</span></td>
+                <td data-label="Fase">3. Desarrollo Frontend</td>
+                <td data-label="Descripción">
+                  Maquetación HTML/CSS y lógica cliente.
+                </td>
+                <td data-label="Fecha de Inicio">11/02/2026</td>
+                <td data-label="Fecha Fin">25/02/2026</td>
+                <td data-label="Estado">
+                  <span class="pending">Pendiente</span>
+                </td>
               </tr>
               <tr>
-                <td>4. Desarrollo Backend</td>
-                <td>Configuración de servidor, base de datos y API.</td>
-                <td>15/02/2026</td>
-                <td>28/02/2026</td>
-                <td><span class="pending">Pendiente</span></td>
+                <td data-label="Fase">4. Desarrollo Backend</td>
+                <td data-label="Descripción">
+                  Configuración de servidor, base de datos y API.
+                </td>
+                <td data-label="Fecha de Inicio">15/02/2026</td>
+                <td data-label="Fecha Fin">28/02/2026</td>
+                <td data-label="Estado">
+                  <span class="pending">Pendiente</span>
+                </td>
               </tr>
               <tr>
-                <td>5. Pruebas</td>
-                <td>
+                <td data-label="Fase">5. Pruebas</td>
+                <td data-label="Descripción">
                   Tests funcionales, de seguridad y corrección de errores.
                 </td>
-                <td>01/03/2026</td>
-                <td>05/03/2026</td>
-                <td><span class="pending">Pendiente</span></td>
+                <td data-label="Fecha de Inicio">01/03/2026</td>
+                <td data-label="Fecha Fin">05/03/2026</td>
+                <td data-label="Estado">
+                  <span class="pending">Pendiente</span>
+                </td>
               </tr>
               <tr>
-                <td>6. Despliegue</td>
-                <td>Puesta en producción y entrega final.</td>
-                <td>06/03/2026</td>
-                <td>07/03/2026</td>
-                <td><span class="pending">Pendiente</span></td>
+                <td data-label="Fase">6. Despliegue</td>
+                <td data-label="Descripción">
+                  Puesta en producción y entrega final.
+                </td>
+                <td data-label="Fecha de Inicio">06/03/2026</td>
+                <td data-label="Fecha Fin">07/03/2026</td>
+                <td data-label="Estado">
+                  <span class="pending">Pendiente</span>
+                </td>
               </tr>
             </tbody>
             <tfoot>
@@ -102,17 +128,21 @@
       <div>
         <p>&copy; 2025 TralaTech. Todos los derechos reservados.</p>
         <address>
-          <p>📍 Calle Innovación 42, Madrid</p>
+          <p>📍 Calle Illueca, 28, 03206 Elche, Alicante</p>
           <p>📧 TralaTech@Tech.com</p>
           <p>📞 +34 666 666 666</p>
         </address>
-        <div class="social-links">
-          <a href="https://facebook.com" aria-label="Facebook">FB</a>
-          <a href="https://twitter.com" aria-label="Twitter">TW</a>
-          <a href="https://linkedin.com" aria-label="LinkedIn">LN</a>
-          <a href="https://instagram.com" aria-label="Instagram">IG</a>
+        <div class="social">
+          <a href="https://facebook.com" target="_blank">Facebook</a>
+          <a href="https://twitter.com" target="_blank">Twitter</a>
+          <a href="https://instagram.com" target="_blank">Instagram</a>
         </div>
-        <a href="#" class="legal-link">Aviso Legal</a>
+        <a
+          href="https://www.google.com/search?q=aviso+legal&oq=aviso+legal&gs_lcrp=EgRlZGdlKgkIABBFGDkYgAQyCQgAEEUYORiABDIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABNIBCDE3MjVqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8"
+          class="legal"
+          target="_blank"
+          >Aviso Legal</a
+        >
       </div>
     </footer>
   </body>

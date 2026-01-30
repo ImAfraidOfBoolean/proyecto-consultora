@@ -13,7 +13,6 @@
     --bg-btc: hsl(322, 100%, 50%);
     --bg-btc-2: hsl(322, 100%, 45%);
 
-
     /* Text */
     --text: hsl(0, 0%, 0%);
     --text2: hsl(300, 65%, 25%);
@@ -52,17 +51,7 @@ body {
     background-color: var(--bg);
     min-height: 100vh;
     margin-top: 3rem;
-}
-
-input,
-textarea,
-button {
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-textarea {
-    resize: none;
+    font-family: 'Galdeano', ui-serif, Georgia, Cambria, 'Times New Roman', serif;
 }
 
 /* quita la linea de los hipervinculos y ajusta el color al negro como predeterminado */
@@ -90,7 +79,7 @@ nav ul {
 }
 
 nav li {
-
+    transition-duration: 100ms;
     list-style: none;
     padding-inline: 1rem;
 }
@@ -166,6 +155,15 @@ nav .btn-cta-highlight:hover {
     background-color: var(--bg-btc-2);
 }
 
+.service-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    transition-duration: 100ms;
+    padding: 1rem;
+    gap: 1rem;
+}
+
 .service-content>.service-title {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -175,13 +173,7 @@ nav .btn-cta-highlight:hover {
 }
 
 
-.service-content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    padding: 1rem;
-    gap: 1rem;
-}
+
 
 .service-content>section {
     display: flex;
@@ -192,17 +184,17 @@ nav .btn-cta-highlight:hover {
     justify-content: center;
     border-radius: 10px;
     box-shadow: 5px 5px 5px var(--shadow);
-    background-color: var(--bg-highlight);
-    padding-block: 1rem;
-    padding-inline: 5rem;
-    font-size: clamp(0.7rem, 1.2vw, 2.5rem);
-    /* font-size: 1.5rem; */
-
+    background-color: white;
+    padding: 1rem 5rem;
+    font-size: clamp(0.7rem, 1.2vw, 2rem);
 }
 
 .service-content .ico {
-    font-size: clamp(1rem, 2vw, 4rem);
-    padding-block: 2rem;
+    font-size: clamp(2rem, 2vw, 4rem);
+}
+
+.service-content>section>h2+p {
+    color: var(--text3);
 }
 
 .service-content>.service-item1 {
@@ -258,8 +250,23 @@ label {
 }
 
 input,
+textarea,
+button {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
 textarea {
+    padding: 0.8rem 1rem;
+    resize: none;
+}
+
+input {
     padding: 0.8rem;
+}
+
+input,
+textarea {
     border: 1px solid var(--border-soft);
     border-radius: 5px;
     background-color: white;
@@ -300,7 +307,7 @@ button:hover {
     align-items: center;
     flex-direction: column;
     background-color: var(--bg-highlight);
-    font-size: clamp(1rem, 2vw + 2rem, 2rem);
+    font-size: clamp(0.1rem, 2vw + 2rem, 2rem);
 }
 
 .sgr>h1 {
@@ -308,6 +315,7 @@ button:hover {
 }
 
 .sgr>p {
+    color: var(--text3);
     margin: 2rem;
 }
 
@@ -315,7 +323,7 @@ button:hover {
     display: flex;
     gap: 2rem;
     margin: 2rem;
-    font-size: clamp(0.5rem, 1vw + 0.5rem, 1rem);
+    font-size: clamp(0.7rem, 1.2vw, 1.2rem);
 }
 
 .left {
@@ -347,7 +355,7 @@ aside>section>* {
     background-color: var(--bg-highlight);
     border-radius: 15px;
     box-shadow: 0 4px 15px var(--shadow-medium);
-    transition-duration: 300ms;
+    transition-duration: 100ms;
     border: 1px solid var(--border-soft);
 }
 
@@ -461,7 +469,8 @@ aside section h3 {
 }
 
 .cronologia {
-    max-width: 1000px;
+    /* max-width: 100vh+32rem; */
+    max-width: 1400px;
     margin: 4rem auto;
     padding: 0 2rem;
 }
@@ -474,13 +483,10 @@ aside section h3 {
 
 .cronologia p {
     text-align: center;
-    color: var(--gray-text);
-    margin-bottom: 3rem;
+    color: var(--text3);
+    margin: 1rem 0 3rem 0;
 }
 
-tr:nth-child(even) {
-    background-color: var(--bg-highlight);
-}
 
 .table-container {
     overflow-x: auto;
@@ -489,21 +495,20 @@ tr:nth-child(even) {
     background: white;
 }
 
-.cronologia-table {
+table {
     width: 100%;
     border-collapse: collapse;
     min-width: 600px;
-    /* Ensure content is readable on small screens */
 }
 
-.cronologia-table th,
-.cronologia-table td {
+table th,
+table td {
     padding: 1.25rem 1rem;
     text-align: left;
     border-bottom: 1px solid var(--border-soft);
 }
 
-.cronologia-table th {
+table th {
     background-color: var(--color-primary);
     color: var(--text2);
     font-weight: bold;
@@ -511,15 +516,15 @@ tr:nth-child(even) {
     font-size: 0.9rem;
 }
 
-.cronologia-table tbody tr:hover {
+table tbody tr:nth-child(even) {
     background-color: var(--bg-highlight);
 }
 
-.cronologia-table tbody tr:last-child td {
+table tbody tr:last-child td {
     border-bottom: none;
 }
 
-.cronologia-table tfoot td {
+table tfoot td {
     background-color: var(--bg-secondary);
     font-weight: bold;
     text-align: right;
@@ -527,8 +532,8 @@ tr:nth-child(even) {
     padding: 1.5rem;
 }
 
-/* Status Badges */
-span {
+/* estado */
+td>span {
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -552,10 +557,9 @@ span {
 
 select {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.8rem;
     border: 1px solid var(--border-soft);
     border-radius: 8px;
-    margin-bottom: 1rem;
 }
 
 footer {
@@ -581,13 +585,13 @@ footer p {
     opacity: 0.9;
 }
 
-.social-links {
+.social {
     display: flex;
     gap: 1.5rem;
     padding: 0.5rem 0;
 }
 
-.social-links a {
+.social a {
     color: white;
     font-weight: bold;
     font-size: 0.9rem;
@@ -598,13 +602,13 @@ footer p {
 
 }
 
-.social-links a:hover {
+.social a:hover {
     background-color: white;
     color: var(--color-dark);
     transform: translateY(-2px);
 }
 
-.legal-link {
+.legal {
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
@@ -613,19 +617,19 @@ footer p {
 
 }
 
-.legal-link:hover {
+.legal:hover {
     color: white;
     border-bottom-style: solid;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 650px) {
     footer>div {
         flex-direction: row;
         justify-content: space-between;
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 650px) {
 
     body {
         margin-top: 0;
