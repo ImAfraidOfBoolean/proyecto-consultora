@@ -232,6 +232,10 @@ nav .btn-cta-highlight:hover {
     margin: 1rem;
 }
 
+/* 
+Formularios
+ */
+
 form {
     display: flex;
     flex-direction: column;
@@ -295,6 +299,9 @@ button:hover {
     background-color: var(--color-secondary);
 }
 
+/* 
+sistema gestor de reservas
+ */
 
 .main-sgr {
     display: flex;
@@ -384,6 +391,10 @@ aside section h3 {
     left: 0;
 }
 
+/* 
+tarjeta de los planes
+*/
+
 .precio {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -467,6 +478,8 @@ aside section h3 {
     align-self: center;
     margin: 2rem 4rem;
 }
+
+/* cronologia */
 
 .cronologia {
     /* max-width: 100vh+32rem; */
@@ -614,7 +627,6 @@ footer p {
     text-decoration: none;
     border-bottom: 1px dotted var(--border-soft);
     transition-duration: 300ms;
-
 }
 
 .legal:hover {
@@ -679,6 +691,10 @@ footer p {
         padding: auto;
     }
 
+    /* 
+    seccion hero
+    */
+
     #hero-index {
         padding: 2rem 1rem;
         text-align: center;
@@ -689,6 +705,10 @@ footer p {
     .hero-content {
         gap: 1.5rem;
     }
+
+    /*
+     servicios
+    */
 
     .service-content {
         display: grid;
