@@ -120,8 +120,8 @@ nav .btn-cta-highlight:hover {
     background-size: cover;
     background-attachment: fixed;
     padding: 5rem;
-    font-size: clamp(0.7rem, 1.5vw, 5rem);
-    height: 80vh;
+    font-size: clamp(1.2rem, 1.5vw, 4rem);
+    height: 85vh;
 }
 
 .hero-content {
@@ -172,9 +172,6 @@ nav .btn-cta-highlight:hover {
     font-size: clamp(2rem, 7vw + 5rem, 3.5rem);
 }
 
-
-
-
 .service-content>section {
     display: flex;
     flex-direction: column;
@@ -186,7 +183,7 @@ nav .btn-cta-highlight:hover {
     box-shadow: 5px 5px 5px var(--shadow);
     background-color: white;
     padding: 1rem 5rem;
-    font-size: clamp(0.7rem, 1.2vw, 2rem);
+    font-size: clamp(1.2rem, 1.2vw, 2rem);
 }
 
 .service-content .ico {
@@ -202,7 +199,6 @@ nav .btn-cta-highlight:hover {
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 4;
-
 }
 
 .service-item1>.content-title {
@@ -314,7 +310,7 @@ sistema gestor de reservas
     align-items: center;
     flex-direction: column;
     background-color: var(--bg-highlight);
-    font-size: clamp(0.1rem, 2vw + 2rem, 2rem);
+    font-size: clamp(1.2rem, 2vw + 2rem, 2rem);
 }
 
 .sgr>h1 {
@@ -330,7 +326,7 @@ sistema gestor de reservas
     display: flex;
     gap: 2rem;
     margin: 2rem;
-    font-size: clamp(0.7rem, 1.2vw, 1.2rem);
+    font-size: clamp(1.2rem, 1.2vw, 2rem);
 }
 
 .left {
