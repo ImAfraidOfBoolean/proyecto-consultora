@@ -114,7 +114,7 @@ nav .btn-cta-highlight:hover {
 #hero-index {
     display: flex;
     background-color: var(--bg-highlight);
-    background-image: url("/img/hero.jpg");
+    background-image: url("../img/hero.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
